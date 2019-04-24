@@ -18,7 +18,7 @@ public class Location
     
     public void markMiss()
     {
-        
+        shipStatus = MISSED;
     }
 
     // Return whether or not this location has a ship.
@@ -37,23 +37,23 @@ public class Location
     // Set the status of this Location.
     public void setStatus(int status)
     {
-        
+        shipStatus = status;
     }
     
     // Get the status of this Location.
     public int getStatus()
     {
-        return(0);
+        return(shipStatus);
     }
     
     public void markHit()
     {
-        
+        shipStatus = HIT;
     }
     
     public boolean isUnguessed()
     {
-        if(UNGUESSED == 0)
+        if(shipStatus == UNGUESSED)
         {
             return(true);
         }
@@ -65,7 +65,7 @@ public class Location
     
     public boolean checkHit()
     {
-        if(HIT == 1)
+        if(shipStatus == HIT)
         {
             return(true);
         }
@@ -77,7 +77,7 @@ public class Location
     
     public boolean checkMiss()
     {
-        if(MISSED == 2)
+        if(shipStatus == MISSED)
         {
             return(true);
         }
