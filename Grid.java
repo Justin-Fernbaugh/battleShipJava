@@ -12,6 +12,10 @@ public class Grid
     // to be a new Location object.
     public Grid()
     {
+        grid = new Location[10][10];
+        for(int row = 0; row < NUM_ROWS; row++)
+            for(int col = 0; col < NUM_COLS; col++)
+                grid[row][col] = new Location();
         
     }
     
@@ -102,12 +106,49 @@ public class Grid
         
     public void printStatus()
     {
+        System.out.println(" 1 2 3 4 5 6 7 8 9 10");
+        for(int row = 0; row < numRows(); row++)
+        {
+            System.out.print((char)(65+row) + " " );
+            for(int col = 0; col < numCols(); col++)
+            {
+                if(grid[row][col].checkHit())
+                {
+                    System.out.print("X ");
+                }
+                else if(grid[row][col].checkMiss())
+                {
+                    System.out.print("O ");
+                }
+                else if(grid[row][col].isUnguessed())
+                {
+                    System.out.print("- ");
+                }
+            }
+            System.out.println("");
+        }
         
         
     }
     public void printShips()
     {
-        
+        System.out.println(" 1 2 3 4 5 6 7 8 9 10");
+        for(int row = 0; row < numRows(); row++)
+        {
+            System.out.print((char)(65+row) + " " );
+            for(int col = 0; col < numCols(); col++)
+            {
+                if(grid[row][col].hasShip())
+                {
+                    System.out.print("X ");
+                }
+                else
+                {
+                    System.out.print("- ");
+                }
+            }
+            System.out.println("");
+        }
     }
 
     

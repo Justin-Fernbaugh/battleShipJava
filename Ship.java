@@ -63,12 +63,12 @@ public class Ship
     
     private String directionToString()
     {
-        return("");
+        return("The direction of the ship is: " + this.direction);
     }
     
     private String locationToString()
     {
-        return("");
+        return(String.format("The location of the ship is row %s and column %s.", this.row, this.col));
     }
     
     public String toString()
@@ -86,7 +86,7 @@ public class Ship
 
     public boolean isLocationSet()
     {
-        if(UNSET == 1)
+        if(this.row == UNSET || this.col == UNSET)
         {
             return(true);
         }
